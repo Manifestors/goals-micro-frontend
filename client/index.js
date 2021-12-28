@@ -4,4 +4,4 @@ import App from './organism/App';
 
 const root = document.getElementById('root');
 
-ReactDOM.render(<App/>, root);
+ReactDOM.render(<App lightMode={true} />, root);

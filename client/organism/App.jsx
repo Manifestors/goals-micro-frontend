@@ -1,9 +1,11 @@
 import FilterSelect from './molecules/FilterSelect';
+import GoalsContainer from './molecules/GoalsContainer';
 
-const App = (props) => {
+const App = ({ lightMode }) => {
   return (
     <section id='goals-micro-frontend-app'>
-      <FilterSelect lightMode={true}/>
+      <FilterSelect lightMode={lightMode}/>
+      <GoalsContainer lightMode={lightMode}/>
     </section>
   );
 };
