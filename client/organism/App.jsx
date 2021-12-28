@@ -1,12 +1,16 @@
+import MainTheme from './themes/main';
+import SectionApp from './molecules/atoms/SectionApp';
 import FilterSelect from './molecules/FilterSelect';
 import GoalsContainer from './molecules/GoalsContainer';
 
-const App = ({ lightMode }) => {
+const App = (props) => {
   return (
-    <section id='goals-micro-frontend-app'>
-      <FilterSelect lightMode={lightMode}/>
-      <GoalsContainer lightMode={lightMode}/>
-    </section>
+    <MainTheme>
+      <SectionApp id='goals-micro-frontend-app'>
+        <FilterSelect />
+        <GoalsContainer />
+      </SectionApp>
+    </MainTheme>
   );
 };
 

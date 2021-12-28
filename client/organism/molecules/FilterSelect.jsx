@@ -6,7 +6,7 @@ const FilterSelect = ({ lightMode }) => {
   return (
     <Form id='goals-filter-form' lightMode={lightMode}>
       <Label htmlFor='goals-filter-select'>Filter Goals</Label>
-      <Select id='goals-filter-select' lightMode={lightMode}>
+      <Select id='goals-filter-select' name='goals-filter-select' lightMode={lightMode}>
         <option value=''>Filter by timeframe</option>
         <option value='Today'>Today</option>
         <option value='Daily'>Daily</option>

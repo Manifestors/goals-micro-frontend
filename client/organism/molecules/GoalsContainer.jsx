@@ -1,24 +1,24 @@
-import Container from './atoms/Container';
-import Goal from './atoms/Goal';
-import ProfileImage from './atoms/ProfileImage';
-import GoalInfo from './atoms/GoalInfo';
-import Paragraph from './atoms/Paragraph';
+import DivContainer from './atoms/DivContainer';
+import ArticleGoal from './atoms/ArticleGoal';
+import ImageProfile from './atoms/ImageProfile';
+import DivGoalInfo from './atoms/DivGoalInfo';
+import SpanText from './atoms/SpanText';
+import SpanTimeTag from './atoms/SpanTimeTag';
+import SpanTextColorOnyx from './atoms/SpanTextColorOnyx';
 
-const GoalsContainer = ({ lightMode }) => {
+const GoalsContainer = (props) => {
   return (
-    <Container id='goals-container' lightMode={lightMode}>
-      <Goal>
-        <ProfileImage src='static/test/theta-pug-1053.png'/>
-        <GoalInfo>
-          <Paragraph>Firstname Lastname</Paragraph>
-          <Paragraph>What?: I want to run a total of 24 miles a month.</Paragraph>
-          <Paragraph>How?: I will run 6 miles a week. I will run Monday...</Paragraph>
-          <div>
-            <time>5 hrs ago</time><span>Monthly</span>
-          </div>
-        </GoalInfo>
-      </Goal>
-    </Container>
+    <DivContainer id='goals-container'>
+      <ArticleGoal>
+        <ImageProfile src='static/test/theta-pug-1054.png'/>
+        <DivGoalInfo>
+          <SpanText>Marlon Esparza</SpanText>
+          <SpanText>What?: <SpanTextColorOnyx>I want to run a total of 24 miles a month.</SpanTextColorOnyx></SpanText>
+          <SpanText>How?: <SpanTextColorOnyx>I will run 6 miles a week.</SpanTextColorOnyx></SpanText>
+          <SpanText><SpanTimeTag>Monthly</SpanTimeTag></SpanText>
+        </DivGoalInfo>
+      </ArticleGoal>
+    </DivContainer>
   );
 };
 
