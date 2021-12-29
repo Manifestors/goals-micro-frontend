@@ -7,9 +7,10 @@ import SpanTimeTag from './atoms/SpanTimeTag';
 import SpanTextColorOnyx from './atoms/SpanTextColorOnyx';
 
 const GoalsContainer = (props) => {
-  return (
-    <DivContainer id='goals-container'>
-      <ArticleGoal>
+  const testArrayForLoop = ['','','','','','','',''];
+  const testChildren = testArrayForLoop.map((val, i) => {
+    return (
+      <ArticleGoal key={i}>
         <ImageProfile src='static/test/theta-pug-1054.png'/>
         <DivGoalInfo>
           <SpanText>Marlon Esparza</SpanText>
@@ -18,6 +19,16 @@ const GoalsContainer = (props) => {
           <SpanText><SpanTimeTag>Monthly</SpanTimeTag></SpanText>
         </DivGoalInfo>
       </ArticleGoal>
+    );
+  });
+
+  // const testChildren = [];
+
+  return (
+    <DivContainer id='goals-container'>
+      {
+        testChildren
+      }
     </DivContainer>
   );
 };
