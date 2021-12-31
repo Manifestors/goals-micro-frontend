@@ -6,6 +6,7 @@ const ImageProfile = styled.img`
   display: block;
   align-self: center;
   justify-self: center;
+  border-radius: 5px;
 `;
 
 export default ImageProfile;

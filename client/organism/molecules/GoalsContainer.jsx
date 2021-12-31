@@ -13,9 +13,9 @@ const GoalsContainer = (props) => {
       <ArticleGoal key={i}>
         <ImageProfile src='static/test/theta-pug-1054.png'/>
         <DivGoalInfo>
-          <SpanText>Marlon Esparza</SpanText>
-          <SpanText>What?: <SpanTextColorOnyx>I want to run a total of 24 miles a month.</SpanTextColorOnyx></SpanText>
-          <SpanText>How?: <SpanTextColorOnyx>I will run 6 miles a week.</SpanTextColorOnyx></SpanText>
+          <SpanTextColorOnyx>Marlon Esparza</SpanTextColorOnyx>
+          <SpanTextColorOnyx>What?: I want to run a total of 24 miles a month.</SpanTextColorOnyx>
+          <SpanTextColorOnyx>How?: I will run 6 miles a week.</SpanTextColorOnyx>
           <SpanText><SpanTimeTag>Monthly</SpanTimeTag></SpanText>
         </DivGoalInfo>
       </ArticleGoal>

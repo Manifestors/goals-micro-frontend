@@ -2,15 +2,17 @@ import MainTheme from './themes/main';
 import SectionApp from './molecules/atoms/SectionApp';
 import FilterSelect from './molecules/FilterSelect';
 import GoalsContainer from './molecules/GoalsContainer';
-import PostGoal from './molecules/PostGoal';
+import PostGoalForm from './molecules/PostGoalForm';
+import PostGoalBtn from './molecules/PostGoalBtn';
 
 const App = (props) => {
   return (
     <MainTheme>
       <SectionApp id='goals-micro-frontend-app'>
-        <FilterSelect id='goals-filter-select'/>
+        <FilterSelect id='goals-filter-select' />
         <GoalsContainer id='goals-container'/>
-        <PostGoal id='goals-post-form'/>
+        <PostGoalForm id='goals-post-form' />
+        <PostGoalBtn />
       </SectionApp>
     </MainTheme>
   );

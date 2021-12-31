@@ -1,11 +1,20 @@
 import { ThemeProvider } from "styled-components";
 
 const theme = {
+  main: {
+    colors: {
+      softGreyBg:  "rgba(243, 243, 243, 1)",
+      softWhiteBg: "rgba(255, 255, 255, 1)",
+      softCharcoalBg: "rgba(88, 88, 88, 1)",
+      softSweetYellow: "rgba(255, 247, 96, 1)"
+    }
+  },
   colors: {
-    powderWhite: "#FFFDF9",
-    persianGreen: "#06B49A",
-    lightBlue: "#AFDBD2",
-    onyx: "#36313D"
+    persianGreen: "rgba(254, 254, 254, .8)",
+    powderWhite: "rgba(243, 243, 243, 1)",
+    lightBlue: "rgba(255, 255, 255, 1)",
+    onyx: "rgba(88, 88, 88, 1)",
+    lightningYellow: "rgba(255, 247, 96, 1)"
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
