@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const SpanTextColorOnyx = styled.span`
-  color: ${({ theme : { colors: { onyx }}}) => onyx ? onyx: black};
+  color: ${({ theme : { main: { colors: { softCharcoalBg }}}}) =>
+    softCharcoalBg ? softCharcoalBg: black
+  };
 `;
 
 export default SpanTextColorOnyx;

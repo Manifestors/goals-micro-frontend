@@ -2,15 +2,21 @@ import styled from 'styled-components';
 
 const Form = styled.form`
   padding: 0;
+
   width: 100%;
+  
   text-align: center;
+
   display: grid;
+
   align-content: center;
+
   min-height: ${({ isPostGoalForm }) => isPostGoalForm ? '400px' : 'auto'};
+  
   max-height: ${({ isPostGoalForm }) => isPostGoalForm ? '400px' : 'auto'};
-  background-color: ${({isPostGoalForm , theme: { colors: { lightBlue, powderWhite }}}) =>
-    isPostGoalForm && powderWhite ? powderWhite :
-    lightBlue ? lightBlue : 'light-grey'
+  background-color: ${({isPostGoalForm , theme: { main: { colors: { softGreyBg, softWhiteBg }}}}) =>
+    isPostGoalForm && softGreyBg ? softGreyBg :
+    softWhiteBg ? softWhiteBg : 'white'
   };
 
   box-shadow: ${({ isPostGoalForm }) =>

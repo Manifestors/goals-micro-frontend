@@ -3,7 +3,9 @@ import styled from 'styled-components';
 const SpanTimeTag = styled.span`
   padding: .3rem;
 
-  font-size: 9.6px;
+  font-size: ${({ theme: { fontSizes: { small }}}) =>
+    small ? small : '9.6px'
+  };
 
   border-radius: 2px;
 

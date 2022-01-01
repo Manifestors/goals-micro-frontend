@@ -5,10 +5,9 @@ const ButtonSubmit = styled.button`
 
   padding: .5rem 1.4rem;
 
-  background-color: ${({isPostGoalFormBtn, isPostGoalBtn, theme: { colors: { lightningYellow }}}) =>
-  isPostGoalFormBtn || isPostGoalBtn ? lightningYellow : 'green'};
+  background-color: ${({isPostGoalFormBtn, isPostGoalBtn, theme: { main: { colors: { softSweetYellow }}}}) =>
+  isPostGoalFormBtn || isPostGoalBtn ? softSweetYellow : 'yellow'};
 
-  // border: ${({theme: { colors: { onyx }}}) => onyx ? `1px solid ${onyx}` : '1px solid black'};
   border: none;
 
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;

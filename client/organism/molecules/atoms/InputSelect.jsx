@@ -2,16 +2,20 @@ import styled from 'styled-components';
 
 const Select = styled.select`
   margin: 1rem;
+
   padding: .5rem 1rem .5rem .4rem;
-  // border: ${({ theme: { main: { colors: { softCharcoalBg }}}}) => softCharcoalBg ? `1px solid ${softCharcoalBg}` : '1px solid green'};
+
+  font-size: ${({ theme: { fontSizes: { medium }}}) =>
+    medium ? medium : '12px'
+  };
+
   border: none;
-  font-size: 12px;
 
-  background-color: ${({isPostGoalForm, theme: { colors: { lightBlue, powderWhite }}}) =>
-    isPostGoalForm && lightBlue ? lightBlue :
-    powderWhite ? powderWhite : 'white'};
+  background-color: ${({isPostGoalForm, theme: { main: { colors: { softGreyBg, softWhiteBg }}}}) =>
+    isPostGoalForm && softWhiteBg ? softWhiteBg :
+    softGreyBg ? softGreyBg : 'white'};
 
-  color: ${({ theme: { colors: { onyx }}}) => onyx ? onyx : 'black'};
+  color: ${({ theme: { main: { colors: { softCharcoalBg }}}}) => softCharcoalBg ? softCharcoalBg : 'black'};
 
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 
@@ -23,8 +27,7 @@ const Select = styled.select`
 
   option {
     color: ${({ theme: { main: { colors: { softCharcoalBg }}}}) => softCharcoalBg ? softCharcoalBg : 'black'};
-    background-color: ${({ theme: { colors: { powderWhite }}}) => powderWhite ? powderWhite : 'white'};
-    padding-left: .4rem;
+    background-color: ${({ theme: { main: { colors: { softWhiteBg }}}}) => softWhiteBg ? softWhiteBg : 'white'};
   }
 `;
 
