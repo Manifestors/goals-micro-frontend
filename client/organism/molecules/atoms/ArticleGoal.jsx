@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 const ArticleGoal = styled.article`
-  margin: 1rem auto;
+  margin: ${({ isGoalContainerEngage }) => isGoalContainerEngage ? '0' :'1rem auto'};
 
-  padding: .5rem;
+  padding: ${({ isGoalContainerEngage }) => isGoalContainerEngage ? '0' :'5px'};
 
-  width: 85%;
-  
+  width: ${({ isGoalContainerEngage }) => isGoalContainerEngage ? '100%' :'93%'};
+
   display: grid;
   
-  grid-template-columns: 1fr 11fr;
-  
+  grid-template-columns: 2fr 10fr;
+
   background-color: ${({ theme: { main: { colors: { softWhiteBg }}}}) => softWhiteBg ? softWhiteBg : 'white'};
   
-  border-radius: 10px;
+  border-radius: ${({ isGoalContainerEngage }) => isGoalContainerEngage ? '0px' :'7px'};
 
   color: ${({ theme: { main: { colors: { softWhiteBg }}}}) => softWhiteBg ? softWhiteBg : 'white'};
 

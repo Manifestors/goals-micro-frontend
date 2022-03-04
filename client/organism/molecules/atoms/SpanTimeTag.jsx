@@ -11,7 +11,7 @@ const SpanTimeTag = styled.span`
 
   display: flex;
 
-  float: left;
+  float: right;
   
   background-color: ${({ theme : { main: { colors: { softCharcoalBg }}}}) => softCharcoalBg ? softCharcoalBg: 'black'};
 

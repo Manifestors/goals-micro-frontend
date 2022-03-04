@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 const DivGoalInfo = styled.div`
-  margin-left: .8rem;
+  padding: 10px 15px 10px 5px;
+
   display: grid;
+
   grid-template-rows: repeat(4, auto);
+
+  grid-gap: .2rem;
 `;
 
 export default DivGoalInfo;

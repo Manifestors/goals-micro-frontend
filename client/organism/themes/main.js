@@ -6,7 +6,8 @@ const theme = {
       softGreyBg:  "rgba(243, 243, 243, 1)",
       softWhiteBg: "rgba(255, 255, 255, 1)",
       softCharcoalBg: "rgba(88, 88, 88, 1)",
-      softSweetYellow: "rgba(255, 247, 96, 1)"
+      softSweetYellow: "rgba(255, 247, 96, 1)",
+      softRed: "rgba(255, 59, 59, 1)"
     }
   },
   fonts: ["sans-serif", "Roboto"],
