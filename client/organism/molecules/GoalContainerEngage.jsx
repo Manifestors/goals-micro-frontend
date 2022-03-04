@@ -1,7 +1,7 @@
 import DivContainer from './atoms/DivContainer';
 import Goal from './Goal';
 
-const GoalContainerEngage = (props) => {
+const GoalContainerEngage = () => {
   return (
     <DivContainer id='goals-container' isGoalContainerEngage={ true }>
       <Goal isGoalContainerEngage={ true }/>
