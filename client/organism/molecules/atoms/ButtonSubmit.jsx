@@ -5,6 +5,8 @@ const ButtonSubmit = styled.button`
 
   padding: .5rem 1.4rem;
 
+  font-weight: bold;
+
   color: ${({isCancelBtn, isSupportBtn}) =>
     isCancelBtn || isSupportBtn ? 'white': 'black'
   };
