@@ -20,10 +20,6 @@ const DivContainer = styled.div`
   grid-template-rows: ${({ isGoalContainerEngage }) =>
     isGoalContainerEngage ? '1fr 11fr' : 'auto'
   };
-
-  justify-content: ${({ isGoalContainerEngage }) =>
-    isGoalContainerEngage ? 'left' : 'normal'
-  };
 `;
 
 export default DivContainer;
