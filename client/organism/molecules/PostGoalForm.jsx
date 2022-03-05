@@ -17,14 +17,17 @@ const PostGoalForm = () => {
   const dispatch = useDispatch();
 
   const handleWhat = (e) => {
+    e.preventDefault();
     dispatch(appendToWhat(e.target.value));
   };
 
   const handleHow = (e) => {
+    e.preventDefault();
     dispatch(appendToHow(e.target.value));
   };
 
   const handleTimeFrame = (e) => {
+    e.preventDefault();
     dispatch(setTimeFrame(e.target.value));
   };
 

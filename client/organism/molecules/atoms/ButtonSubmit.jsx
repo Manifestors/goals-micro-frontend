@@ -5,13 +5,14 @@ const ButtonSubmit = styled.button`
 
   padding: .5rem 1.4rem;
 
-  color: ${({isCancelBtn}) =>
-    isCancelBtn ? 'white': 'black'
+  color: ${({isCancelBtn, isSupportBtn}) =>
+    isCancelBtn || isSupportBtn ? 'white': 'black'
   };
 
-  background-color: ${({isPostGoalFormBtn, isPostGoalBtn, isCancelBtn, theme: { main: { colors: { softSweetYellow, softRed }}}}) =>
+  background-color: ${({isPostGoalFormBtn, isPostGoalBtn, isCancelBtn, isSupportBtn, theme: { main: { colors: { softSweetYellow, softRed, softBlue }}}}) =>
     isPostGoalFormBtn || isPostGoalBtn ? softSweetYellow :
-    isCancelBtn ? softRed : 'yellow'
+    isCancelBtn ? softRed :
+    isSupportBtn ? softBlue : 'yellow'
   };
 
   border: none;

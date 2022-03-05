@@ -3,7 +3,7 @@ import ButtonSubmit from "./atoms/ButtonSubmit";
 import { useDispatch } from 'react-redux';
 import { makeViewVisible } from '../features/views/postGoalView';
 
-const PostGoalBtn = (props) => {
+const PostGoalBtn = () => {
   const dispatch = useDispatch();
 
   const handleManifest = (e) => {

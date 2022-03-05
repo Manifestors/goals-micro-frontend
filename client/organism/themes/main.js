@@ -7,14 +7,15 @@ const theme = {
       softWhiteBg: "rgba(255, 255, 255, 1)",
       softCharcoalBg: "rgba(88, 88, 88, 1)",
       softSweetYellow: "rgba(255, 247, 96, 1)",
-      softRed: "rgba(255, 59, 59, 1)"
+      softRed: "rgba(255, 59, 59, 1)",
+      softBlue: "rgba(59, 108, 255, 1)",
     }
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
     small: "9.6px",
     medium: "12px",
-    large: "16px"
+    large: "16px",
   }
 };
 

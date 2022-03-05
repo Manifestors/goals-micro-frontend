@@ -8,6 +8,8 @@ const DivGoalInfo = styled.div`
   grid-template-rows: repeat(4, auto);
 
   grid-gap: .2rem;
+
+  text-align: left;
 `;
 
 export default DivGoalInfo;
