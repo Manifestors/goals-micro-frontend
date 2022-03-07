@@ -1,8 +1,8 @@
 const goalRouter = require('express').Router();
 const testGoals = require('./../../static-assets/test-goals/goals');
-console.log(testGoals);
 
-goalRouter.get('/:id', (req, res) => {
+
+goalRouter.get('/one/:id', (req, res) => {
   const { id } = req.params;
 
   const engagedGoal = testGoals.filter((goal, i) => {

@@ -12,6 +12,7 @@ import { setEngagedGoal } from '../features/goals/engagedGoalSlice';
 const Goal = (props) => {
   const engagedView = useSelector((state) => state.engageGoalView.view);
   const { userName, mWhat, mHow, mTimeFrame } = props;
+  // console.log(props);
   const dispatch = useDispatch();
   
   const handleEngage = (e) => {

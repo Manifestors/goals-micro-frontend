@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'development',
-  entry: __dirname + '/client/index.js',
+  entry: ["regenerator-runtime/runtime.js", __dirname + '/client/index.js'],
   output: {
     path: __dirname + '/public/dist',
     filename: 'bundle.js'

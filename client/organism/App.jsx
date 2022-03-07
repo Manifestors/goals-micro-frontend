@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { pushToGoals } from './features/goals/allGoalsSlice';
 import axios from 'axios';
 import MainTheme from './themes/main';
 import SectionApp from './molecules/atoms/SectionApp';
@@ -10,19 +12,14 @@ import PostGoalForm from './molecules/PostGoalForm';
 import PostGoalBtn from './molecules/PostGoalBtn';
 
 
-const App = () => {
+const App = ({ fetchAllGoals }) => {
   const postGoalView = useSelector((state) => state.postGoalView.view);
   const engageGoalView = useSelector((state) => state.engageGoalView.view);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    return axios.get('/test/goals/all')
-      .then(({ data }) => {
-        console.log('All goals: ', data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+    fetchAllGoals(dispatch, pushToGoals);
+  }, []);
 
   return (
     <MainTheme>

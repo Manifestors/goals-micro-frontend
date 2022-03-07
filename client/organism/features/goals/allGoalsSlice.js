@@ -9,6 +9,7 @@ const allGoalsSlice = createSlice({
   },
   reducers: {
     pushToGoals: (state, { payload }) => {
+      console.log(payload);
       state.goals.unshift(payload)
     },
     setFilter: (state, { payload }) => {
