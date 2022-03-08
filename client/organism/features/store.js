@@ -4,6 +4,8 @@ import allGoalsReducer from './goals/allGoalsSlice';
 import postGoalViewReducer from './views/postGoalView';
 import engageGoalViewReducer from './views/engageGoalView';
 import engagedGoalReducer from './goals/engagedGoalSlice';
+import postSupportReducer from './forms/postSupportSlice';
+import postSupportViewReducer from './views/postSupportView';
 
 
 export default configureStore({
@@ -12,6 +14,8 @@ export default configureStore({
     allGoals: allGoalsReducer,
     postGoalView: postGoalViewReducer,
     engageGoalView: engageGoalViewReducer,
-    engagedGoal: engagedGoalReducer
+    engagedGoal: engagedGoalReducer,
+    postSupportForm: postSupportReducer,
+    postSupportView: postSupportViewReducer,
   },
 });

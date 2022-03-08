@@ -9,8 +9,18 @@ const allGoalsSlice = createSlice({
   },
   reducers: {
     pushToGoals: (state, { payload }) => {
-      console.log(payload);
-      state.goals.unshift(payload)
+      state.goals.unshift(payload);
+    },
+    pushToSupportMessages: (state, payload) => {
+      console.log('Support Msg: ', payload);
+      state.goals.forEach(goal => {
+        // make api request to all goals
+        // add to support messages of determined goal by id
+        if (payload.belongsTo === goal.id) {
+          console.log('Matching Goal: ', goal);
+          goal.sMsgs.push[payload];
+        }
+      });
     },
     setFilter: (state, { payload }) => {
       state.filterBy = payload;
