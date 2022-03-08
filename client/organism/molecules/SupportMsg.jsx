@@ -7,6 +7,7 @@ import SpanTextColorOnyx from './atoms/SpanTextColorOnyx';
 const SupportMsg = (props) => {
   console.log('Support Msg Props:', props);
   const { sMsg } = props.sMsg;
+  const userName = 'Marlon Esparza';
 
   return (
     <ArticleGoal isSupportMsg={true}>

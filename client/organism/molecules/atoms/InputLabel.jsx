@@ -7,8 +7,8 @@ const Label = styled.label`
     large ? large : '16px'
   };
   
-  display: ${({ isPostGoalLabel }) =>
-    isPostGoalLabel ? 'block' : 'none'
+  display: ${({ isPostGoalLabel, isSupportMessageLabel }) =>
+    isPostGoalLabel || isSupportMessageLabel ? 'block' : 'none'
   }; 
   
   color: ${({ theme: { main: { colors: { softCharcoalBg }}}}) =>

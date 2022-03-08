@@ -7,15 +7,15 @@ const postSupportView = createSlice({
     view: false
   },
   reducers: {
-    makeViewVisible: (state) => {
+    makeSupportViewVisible: (state) => {
       state.view = true;
     },
-    makeViewInvisible: (state) => {
+    makeSupportViewInvisible: (state) => {
       state.view = false;
     }
   }
 });
 
 
-export const { makeViewVisible, makeViewInvisible } = postSupportView.actions;
+export const { makeSupportViewVisible, makeSupportViewInvisible } = postSupportView.actions;
 export default postSupportView.reducer;

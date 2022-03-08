@@ -5,13 +5,13 @@ import ButtonSubmit from "./atoms/ButtonSubmit";
 import DivInline from "./atoms/DivInline";
 import { useSelector, useDispatch } from "react-redux";
 import { appendToSupportMessage, clearForm } from "../features/forms/postSupportSlice";
+import { makeSupportViewInvisible } from "../features/views/postSupportView";
 import { pushToSupportMessages } from "../features/goals/allGoalsSlice";
-import { makeViewInvisible } from "../features/views/postSupportView";
 
 
 const PostSupportForm = () => {
-  const sMsg = useSelector((state) => state.PostSupportForm.sMsg);
-  const idOfMsgToSupport = use((state) => state.engadedGoal.id);
+  const sMsg = useSelector((state) => state.postSupportForm.msg);
+  const idOfMsgToSupport = useSelector((state) => state.engagedGoal.id);
   const dispatch = useDispatch();
 
   const handleSupportMsg = (e) => {
@@ -25,28 +25,19 @@ const PostSupportForm = () => {
     const sMsgObj = {belongsTo: idOfMsgToSupport, sMsg};
     dispatch(pushToSupportMessages(sMsgObj));
     dispatch(clearForm());
-    dispatch(makeViewInvisible());
-  };
-
-  const handleCancel = (e) => {
-    e.preventDefault();
-    dispatch(makeViewInvisible());
+    dispatch(makeSupportViewInvisible());
   };
 
   return (
     <DivInline>
-      <Form id='post-goal-form' isPostSupportForm={ true } onSubmit={handleSubmit}>
-        <Label htmlFor="textarea-msg" isSupportMessageLabel={ true }>Say something, or ask something, supportive.</Label>
+      <Form id='post-support-form' isPostSupportForm={ true } onSubmit={handleSubmit}>
+        <Label htmlFor="textarea-msg" isSupportMessageLabel={ true }>Say, or ask, something supportive.</Label>
         <TextAreaGoal id='textarea-msg' name='textarea-msg' rows='3' value={sMsg} onChange={handleSupportMsg}/>
 
         <DivInline>
-          <ButtonSubmit id='post-goal-submit' isPostSupportFormBtn={ true }>Support</ButtonSubmit>
+          <ButtonSubmit id='post-support-submit' isPostSupportFormBtn={ true }>Support</ButtonSubmit>
         </DivInline>
       </Form>
-
-      <DivInline>
-        <ButtonSubmit isCancelBtn={ true } onClick={handleCancel}>Cancel</ButtonSubmit>
-      </DivInline>
     </DivInline>
   );
 };

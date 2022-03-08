@@ -17,5 +17,5 @@ export const postSupportSlice = createSlice({
 });
 
 
-export const { appendToSupportMessage } = postSupportSlice.actions;
+export const { appendToSupportMessage, clearForm } = postSupportSlice.actions;
 export default postSupportSlice.reducer;

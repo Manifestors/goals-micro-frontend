@@ -10,18 +10,18 @@ const GoalContainerAll = (props) => {
 
   if (filterBy === '' || filterBy.toLowerCase() === 'all') {
     mappedGoals = goals.map((val, i) => {
-      const {id, userName, mWhat, mHow, mTimeFrame} = val;
+      const {id, userName, mWhat, mHow, mTimeFrame, sMsgs} = val;
       return (
-        <Goal id={id} key={i} userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame}/>
+        <Goal id={id} key={i} userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame} sMsgs={sMsgs}/>
       );
     });
   } else {
     mappedGoals = goals.map((val, i) => {
-      const {id, userName, mWhat, mHow, mTimeFrame} = val;
+      const {id, userName, mWhat, mHow, mTimeFrame, sMsgs} = val;
 
       if (filterBy === mTimeFrame) {
         return (
-          <Goal id={id} key={i} userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame}/>
+          <Goal id={id} key={i} userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame} sMsgs={sMsgs}/>
         );
       }
     });

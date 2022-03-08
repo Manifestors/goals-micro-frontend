@@ -36,7 +36,7 @@ const PostGoalForm = () => {
     const mWhat = e.target['textarea-what'].value;
     const mHow = e.target['textarea-how'].value;
     const mTimeFrame = e.target['goals-tag-select'].value;
-    const mGoal = {mWhat, mHow, mTimeFrame};
+    const mGoal = {mWhat, mHow, mTimeFrame, sMsgs: []};
     dispatch(pushToGoals(mGoal));
     dispatch(clearForm());
     dispatch(makeViewInvisible());

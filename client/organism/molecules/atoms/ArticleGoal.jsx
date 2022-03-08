@@ -11,6 +11,10 @@ const ArticleGoal = styled.article`
   
   grid-template-columns: 2fr 10fr;
 
+  grid-template-rows: ${({ isSupportMsg }) =>
+    isSupportMsg ? 'auto': 'none'
+  };
+
   background-color: ${({ theme: { main: { colors: { softWhiteBg }}}}) => softWhiteBg ? softWhiteBg : 'white'};
   
   border-radius: ${({ isGoalContainerEngage }) => isGoalContainerEngage ? '0px' :'7px'};

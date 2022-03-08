@@ -7,7 +7,11 @@ const DivContainer = styled.div`
 
   max-height: 400px;
   
-  overflow-y: auto;
+  ${({isGoalContainerEngage}) => {
+    return !isGoalContainerEngage ?
+      'overflow-y: auto;' :
+      null
+  }}
 
   background-color: ${({ theme: { main: { colors: { softGreyBg }}}}) => softGreyBg ? softGreyBg : 'light-grey'};
 

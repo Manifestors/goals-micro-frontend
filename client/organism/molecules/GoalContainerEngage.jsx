@@ -6,6 +6,8 @@ import ButtonSubmit from './atoms/ButtonSubmit';
 import Goal from './Goal';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeViewInvisible } from '../features/views/engageGoalView';
+import { makeSupportViewInvisible, makeSupportViewVisible } from '../features/views/postSupportView';
+import { clearForm } from '../features/forms/postSupportSlice';
 
 
 const GoalContainerEngage = () => {
@@ -13,7 +15,7 @@ const GoalContainerEngage = () => {
   const engagedGoal = useSelector((state) => state.engagedGoal.goal);
   const postSupportView = useSelector((state) => state.postSupportView.view);
   const dispatch = useDispatch();
-  const { userName, mWhat, mHow, mTimeFrame, sMsgs } = engagedGoal;
+  const { id, userName, mWhat, mHow, mTimeFrame, sMsgs } = engagedGoal;
 
   const handleDisengage = (e) => {
     e.preventDefault();
@@ -22,24 +24,42 @@ const GoalContainerEngage = () => {
 
   const handleSupport = (e) => {
     e.preventDefault();
+    dispatch(makeSupportViewVisible());
   }
+  
+  const handleCancel = (e) => {
+    e.preventDefault();
+    dispatch(clearForm());
+    dispatch(makeSupportViewInvisible());
+  };
 
+  console.log('36- Supporting Messages: ', sMsgs);
   return (
     <DivInline>
-      <DivContainer id='goals-container' isGoalContainerEngage={engagedView}>
-        <Goal userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame} />
+      <DivContainer id='enganged-goal-container' isGoalContainerEngage={engagedView}>
+        <Goal id={id} userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame} sMsgs={sMsgs} />
         {
           postSupportView ? <PostSupportForm id='support-post-form'/> :
-            sMsgs.map((sMsg) => {
-              return <SupportMsg key={i} sMsg={sMsg}/>
-            })
+            <DivInline isGoalContainerEngage={engagedView}>
+              {
+                sMsgs.map((sMsg, i) => {
+                  return <SupportMsg key={i} sMsg={sMsg}/>
+                })
+              }
+            </DivInline>
         }
       </DivContainer>
 
-      <DivInline>
-        <ButtonSubmit isCancelBtn={true} onClick={handleDisengage}>Disengage</ButtonSubmit>
-        <ButtonSubmit isSupportBtn={true} onClick={handleSupport}>Show Support</ButtonSubmit>
-      </DivInline>
+      {
+        !postSupportView ?
+          <DivInline>
+            <ButtonSubmit isCancelBtn={true} onClick={handleDisengage}>Disengage</ButtonSubmit>
+            <ButtonSubmit isSupportBtn={true} onClick={handleSupport}>Show Support</ButtonSubmit>
+          </DivInline> :
+          <DivInline>
+            <ButtonSubmit isCancelBtn={ true } onClick={handleCancel}>Cancel</ButtonSubmit>
+          </DivInline>
+      }
     </DivInline>
   );
 };

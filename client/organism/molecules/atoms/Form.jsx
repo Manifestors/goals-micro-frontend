@@ -12,16 +12,19 @@ const Form = styled.form`
 
   align-content: center;
 
-  min-height: ${({ isPostGoalForm }) => isPostGoalForm ? '400px' : 'auto'};
+  min-height: ${({ isPostGoalForm, isPostSupportForm }) =>
+    isPostGoalForm ?'400px' :
+    isPostSupportForm ? '100%' : 'auto'
+  }; 
   
-  max-height: ${({ isPostGoalForm }) => isPostGoalForm ? '400px' : 'auto'};
-  background-color: ${({isPostGoalForm , theme: { main: { colors: { softGreyBg, softWhiteBg }}}}) =>
-    isPostGoalForm && softGreyBg ? softGreyBg :
+  max-height: ${({ isPostGoalForm, isPostSupportForm }) => isPostGoalForm || isPostSupportForm ? '400px' : 'auto'};
+  background-color: ${({isPostGoalForm, isPostSupportForm , theme: { main: { colors: { softGreyBg, softWhiteBg }}}}) =>
+    isPostGoalForm || isPostSupportForm && softGreyBg ? softGreyBg :
     softWhiteBg ? softWhiteBg : 'white'
   };
 
-  box-shadow: ${({ isPostGoalForm }) =>
-    isPostGoalForm ? 'box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset' : 'none'};
+  box-shadow: ${({ isPostGoalForm, isPostSupportForm }) =>
+    isPostGoalForm || isPostSupportForm ? 'box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset' : 'none'};
 `;
 
 export default Form;
