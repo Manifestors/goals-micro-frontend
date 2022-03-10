@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { appendToWhat, appendToHow, setTimeFrame, clearForm } from "../features/forms/postGoalSlice";
 import { pushToGoals } from "../features/goals/allGoalsSlice";
 import { makeViewInvisible } from "../features/views/postGoalView";
+import postAGoal from '../../utils/postAGoal';
+
 
 const PostGoalForm = () => {
   const what = useSelector((state) => state.postGoalForm.what);
@@ -36,8 +38,8 @@ const PostGoalForm = () => {
     const mWhat = e.target['textarea-what'].value;
     const mHow = e.target['textarea-how'].value;
     const mTimeFrame = e.target['goals-tag-select'].value;
-    const mGoal = {mWhat, mHow, mTimeFrame, sMsgs: []};
-    dispatch(pushToGoals(mGoal));
+    const mGoal = {mWhat, mHow, mTimeFrame};
+    postAGoal(mGoal, dispatch, pushToGoals);
     dispatch(clearForm());
     dispatch(makeViewInvisible());
   };

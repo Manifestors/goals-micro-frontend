@@ -1,3 +1,7 @@
+// create Goal es6 class
+// fields: goals [], size
+// methods: getGoals, getSize, addToGoals, increaseSize
+
 const goals = [
   {
     id: 1,
