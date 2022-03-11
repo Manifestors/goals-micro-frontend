@@ -33,7 +33,6 @@ const GoalContainerEngage = () => {
     dispatch(makeSupportViewInvisible());
   };
 
-  console.log('36- Supporting Messages: ', sMsgs);
   return (
     <DivInline>
       <DivContainer id='enganged-goal-container' isGoalContainerEngage={engagedView}>

@@ -4,9 +4,8 @@ import 'regenerator-runtime/runtime';
 
 const fetchAllGoals = async (dispatch, action) => {
   const { data } = await axios.get('/test/goals/all');
-  const allGoals = JSON.parse(data);
 
-  allGoals.forEach((goal) => {
+  data.forEach((goal) => {
     dispatch(action(goal));
   });
 };

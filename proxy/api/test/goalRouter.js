@@ -1,28 +1,28 @@
 const goalRouter = require('express').Router();
-const testGoals = require('./../../static-assets/test-goals/goals');
+const goal = require('./../../static-assets/test-goals/goals');
 
 
 goalRouter.get('/one/:id', (req, res) => {
   const { id } = req.params;
-  const engagedGoal = testGoals.filter((goal) => {
-    if (goal.id === id) {
-      return goal;
-    }
-  });
-  return res.status(200).send(engagedGoal[0]);
+  const engagedGoal = goal.getGoalById(id);
+  return res.status(200).send(engagedGoal);
 });
 
 goalRouter.get('/all', (req, res) => {
-  const allTestGoals = JSON.stringify(testGoals);
-  return res.status(200).json(allTestGoals);
+  const goals = goal.getGoals();
+  return res.status(200).send(goals);
 });
 
 
 goalRouter.post('/one', (req, res) => {
-  console.log('POST: ', req.body);
-  const createdGoal = {mWhat, mHow, mTimeFrame} = req.body;
-  const response = JSON.stringify([{}]);
-  return res.status(200).json(response);
+  const goalToCreate = {mWhat, mHow, mTimeFrame} = req.body;
+  const createdGoal = goal.addToGoals(goalToCreate);
+  return res.status(200).send([createdGoal]);
+});
+
+goalRouter.post('/one/support', (req, res) => {
+  const updatedGoal = goal.addSupportToGoal(req.body);
+  return res.status(200).send([updatedGoal]);
 });
 
 

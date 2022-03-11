@@ -11,18 +11,13 @@ const allGoalsSlice = createSlice({
     pushToGoals: (state, { payload }) => {
       state.goals.unshift(payload);
     },
-    pushToSupportMessages: (state, { payload }) => {
+    updateGoals: (state, { payload }) => {
       state.goals = state.goals.map(goal => {
-        // make api request to all goals
-        // add to support messages of determined goal by id
-        const pGoal = current(goal);
-        if (payload.belongsTo === pGoal.id) {
-          const {sMsgs} = pGoal;
-          const currentSupportMsgs = JSON.parse(JSON.stringify(sMsgs));
-          const updatedSupportMsgs = [...currentSupportMsgs, payload];
-          return {...pGoal, sMsgs: updatedSupportMsgs};
+        const currentGoal = current(goal);
+        if ( currentGoal.id === payload.id) {
+          return payload;
         }
-        return pGoal;
+        return currentGoal;
       });
     },
     setFilter: (state, { payload }) => {
@@ -32,5 +27,5 @@ const allGoalsSlice = createSlice({
 });
 
 
-export const { pushToGoals, pushToSupportMessages, setFilter } = allGoalsSlice.actions;
+export const { pushToGoals, updateGoals, setFilter } = allGoalsSlice.actions;
 export default allGoalsSlice.reducer;

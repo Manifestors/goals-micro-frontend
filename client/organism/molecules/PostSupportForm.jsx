@@ -6,7 +6,9 @@ import DivInline from "./atoms/DivInline";
 import { useSelector, useDispatch } from "react-redux";
 import { appendToSupportMessage, clearForm } from "../features/forms/postSupportSlice";
 import { makeSupportViewInvisible } from "../features/views/postSupportView";
-import { pushToSupportMessages } from "../features/goals/allGoalsSlice";
+import { updateGoals } from "../features/goals/allGoalsSlice";
+import { setEngagedGoal } from "../features/goals/engagedGoalSlice";
+import postASupportMsg from "../../utils/postASupportMsg";
 
 
 const PostSupportForm = () => {
@@ -23,7 +25,7 @@ const PostSupportForm = () => {
     e.preventDefault();
     const sMsg = e.target['textarea-msg'].value;
     const sMsgObj = {belongsTo: idOfMsgToSupport, sMsg};
-    dispatch(pushToSupportMessages(sMsgObj));
+    postASupportMsg(sMsgObj, dispatch, updateGoals, setEngagedGoal);
     dispatch(clearForm());
     dispatch(makeSupportViewInvisible());
   };

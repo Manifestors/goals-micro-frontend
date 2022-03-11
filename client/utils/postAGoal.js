@@ -8,10 +8,7 @@ const postAGoal = async (goalToPost, dispatch, action) => {
     ...goalToPost
   });
   
-  console.log('Response Data: ', data);
-  const allGoals = JSON.parse(data) || [];
-
-  allGoals.forEach((goal) => {
+  data.forEach((goal) => {
     dispatch(action(goal));
   });
 };
