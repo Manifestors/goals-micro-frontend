@@ -25,5 +25,11 @@ goalRouter.post('/one/support', (req, res) => {
   return res.status(200).send([updatedGoal]);
 });
 
+goalRouter.delete('/one/delete', (req, res) => {
+  const { goalId } = req.body;
+  const updatedGoals = goal.deleteGoal(goalId);
+  return res.status(200).send(updatedGoals);
+});
+
 
 module.exports = goalRouter;

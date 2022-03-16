@@ -20,12 +20,15 @@ const allGoalsSlice = createSlice({
         return currentGoal;
       });
     },
+    deleteAGoalAndUpdateGoals: (state, { payload}) => {
+      state.goals = payload;
+    },
     setFilter: (state, { payload }) => {
       state.filterBy = payload;
-    }
+    },
   }
 });
 
 
-export const { pushToGoals, updateGoals, setFilter } = allGoalsSlice.actions;
+export const { pushToGoals, updateGoals, setFilter, deleteAGoalAndUpdateGoals } = allGoalsSlice.actions;
 export default allGoalsSlice.reducer;

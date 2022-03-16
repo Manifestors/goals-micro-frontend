@@ -3,7 +3,6 @@ import 'regenerator-runtime/runtime';
 
 
 const postAGoal = async (goalToPost, dispatch, action) => {
-  console.log('Goal To Post: ', goalToPost);
   const { data } = await axios.post('/test/goals/one', {
     ...goalToPost
   });

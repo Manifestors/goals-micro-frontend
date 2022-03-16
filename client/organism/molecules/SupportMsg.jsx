@@ -11,7 +11,7 @@ const SupportMsg = (props) => {
 
   return (
     <ArticleGoal isSupportMsg={true}>
-      <ImageProfile src='static/test/theta-pug-1054.png'/>
+      <ImageProfile src='static/test/theta-pug-1053.png'/>
       <DivGoalInfo>
         <SpanTextColorOnyx>{ userName ? userName : 'Marlon Esparza' }</SpanTextColorOnyx>
         <SpanTextColorOnyx>Support: { sMsg }</SpanTextColorOnyx>

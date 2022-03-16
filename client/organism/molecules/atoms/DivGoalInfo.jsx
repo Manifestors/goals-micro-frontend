@@ -5,6 +5,8 @@ const DivGoalInfo = styled.div`
 
   display: grid;
 
+  position: relative;
+
   grid-template-rows: repeat(4, auto);
 
   grid-gap: .2rem;

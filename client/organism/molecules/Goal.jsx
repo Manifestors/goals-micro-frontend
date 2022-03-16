@@ -4,9 +4,12 @@ import DivGoalInfo from './atoms/DivGoalInfo';
 import SpanText from './atoms/SpanText';
 import SpanTimeTag from './atoms/SpanTimeTag';
 import SpanTextColorOnyx from './atoms/SpanTextColorOnyx';
+import ButtonDelete from './atoms/ButtonDelete';
 import { useSelector, useDispatch } from 'react-redux';
-import { makeViewVisible } from '../features/views/engageGoalView';
+import { makeViewVisible, makeViewInvisible } from '../features/views/engageGoalView';
 import { setEngagedGoal } from '../features/goals/engagedGoalSlice';
+import { deleteAGoalAndUpdateGoals } from '../features/goals/allGoalsSlice';
+import deleteAGoal from '../../utils/deleteAGoal';
 
 
 const Goal = (props) => {
@@ -20,14 +23,24 @@ const Goal = (props) => {
     dispatch(makeViewVisible());
   };
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    deleteAGoal(id, dispatch, deleteAGoalAndUpdateGoals);
+    dispatch(makeViewInvisible());
+  };
+
   return (
-    <ArticleGoal isGoalContainerEngage={engagedView} onClick={handleEngage}>
-      <ImageProfile src='static/test/theta-pug-1054.png'/>
-      <DivGoalInfo>
-        <SpanTextColorOnyx>{ userName ? userName : 'Marlon Esparza' }</SpanTextColorOnyx>
-        <SpanTextColorOnyx>What?: { mWhat }</SpanTextColorOnyx>
-        <SpanTextColorOnyx>How?: { mHow }</SpanTextColorOnyx>
-        <SpanText><SpanTimeTag>{ mTimeFrame }</SpanTimeTag></SpanText>
+    <ArticleGoal style={{position: 'relative'}} isGoalContainerEngage={engagedView} onClick={handleEngage}>
+      <ImageProfile style={{position: 'relative', zIndex: 1}} src='static/test/theta-pug-1054.png'/>
+      <DivGoalInfo style={{position: 'relative', zIndex: 1}}>
+        <SpanTextColorOnyx style={{position: 'relative', zIndex: 2}}>{ userName ? userName : 'Marlon Esparza' }</SpanTextColorOnyx>
+        <SpanTextColorOnyx style={{position: 'relative', zIndex: 2}}>What?: { mWhat }</SpanTextColorOnyx>
+        <SpanTextColorOnyx style={{position: 'relative', zIndex: 2}}>How?: { mHow }</SpanTextColorOnyx>
+        <SpanText style={{position: 'relative', zIndex: 2}}>
+          <ButtonDelete style={{position: 'relative', zIndex: 3}} onClick={ handleDelete }>X</ButtonDelete>
+          <SpanTimeTag style={{position: 'relative', zIndex: 3}}>{ mTimeFrame ? mTimeFrame : 'Today' }</SpanTimeTag>
+        </SpanText>
       </DivGoalInfo>
     </ArticleGoal>
   );

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 const ImageProfile = styled.img`
-  width: 75px;
+  width: 50px;
 
-  height: 75px;
+  height: 50px;
 
   padding: 10px 5px 10px 15px;
 
   display: block;
 
-  align-self: center;
+  align-self: top;
 
   justify-self: center;
 

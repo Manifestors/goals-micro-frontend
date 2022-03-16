@@ -8,12 +8,10 @@ const ArticleGoal = styled.article`
   width: ${({ isGoalContainerEngage }) => isGoalContainerEngage ? '100%' :'93%'};
 
   display: grid;
+
+  position: relative;
   
   grid-template-columns: 2fr 10fr;
-
-  grid-template-rows: ${({ isSupportMsg }) =>
-    isSupportMsg ? 'auto': 'none'
-  };
 
   background-color: ${({ theme: { main: { colors: { softWhiteBg }}}}) => softWhiteBg ? softWhiteBg : 'white'};
   

@@ -1,3 +1,7 @@
+// add timestamp
+// add delete method
+const _ = require('lodash');
+
 class Goal {
   constructor() {
     this.goals = {};
@@ -10,8 +14,10 @@ class Goal {
     const currentGoals = this.goals;
     const allGoals = [];
     for (let i = 1; i < this.size + 1; i++) {
-      allGoals.push(currentGoals[i]);
-    }
+      if (currentGoals[i]) {
+        allGoals.push(currentGoals[i]);
+      };
+    };
     return allGoals;
   }
   
@@ -34,6 +40,11 @@ class Goal {
     this.increaseNextSupportId();
     this.goals[belongsTo] = goalToSupport;
     return this.getGoalById(belongsTo);
+  }
+
+  deleteGoal(id) {
+    this.goals = _.omit(this.goals, [JSON.stringify(id)]);
+    return this.getGoals();
   }
 
   getSize() {
@@ -71,7 +82,8 @@ class Goal {
         mWhat: 'Create an application based on goal manifestation.',
         mHow: 'Come up with a longterm goal, then make daily plans/commits.',
         mTimeFrame: 'Yearly',
-        sMsgs: []
+        sMsgs: [],
+
       },
       2: {
         id: 2,
@@ -79,7 +91,8 @@ class Goal {
         mWhat: 'Study the Winnie back-end codebase in order to deeply understand it.',
         mHow: 'Set aside a few hours every weekend to dive into their Github.',
         mTimeFrame: 'Weekly',
-        sMsgs: []
+        sMsgs: [],
+
       },
       3: {
         id: 3,
@@ -87,7 +100,8 @@ class Goal {
         mWhat: 'Save $1,000 fast, then move on to the debt snowball.',
         mHow: 'Put away $30 each day- which is equal to 2 hours.',
         mTimeFrame: 'Daily',
-        sMsgs: []
+        sMsgs: [],
+
       }
     };
     this.increaseSize();
@@ -100,7 +114,7 @@ class Goal {
 };
 
 const goal = new Goal();
-goal.instantiateTestData();
+// goal.instantiateTestData();
 
 
 module.exports = goal;
