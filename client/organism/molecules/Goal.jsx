@@ -8,7 +8,7 @@ import ButtonDelete from './atoms/ButtonDelete';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeViewVisible, makeViewInvisible } from '../features/views/engageGoalView';
 import { setEngagedGoal } from '../features/goals/engagedGoalSlice';
-import { deleteAGoalAndUpdateGoals } from '../features/goals/allGoalsSlice';
+import { setGoals } from '../features/goals/allGoalsSlice';
 import deleteAGoal from '../../utils/deleteAGoal';
 
 
@@ -26,7 +26,7 @@ const Goal = (props) => {
   const handleDelete = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    deleteAGoal(id, dispatch, deleteAGoalAndUpdateGoals);
+    deleteAGoal(id, dispatch, setGoals);
     dispatch(makeViewInvisible());
   };
 

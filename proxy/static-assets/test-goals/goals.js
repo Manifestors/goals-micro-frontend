@@ -1,5 +1,3 @@
-// add timestamp
-// add delete method
 const _ = require('lodash');
 
 class Goal {
@@ -15,7 +13,7 @@ class Goal {
     const allGoals = [];
     for (let i = 1; i < this.size + 1; i++) {
       if (currentGoals[i]) {
-        allGoals.push(currentGoals[i]);
+        allGoals.unshift(currentGoals[i]);
       };
     };
     return allGoals;
@@ -33,6 +31,11 @@ class Goal {
     return this.getGoalById(createdGoal.id);
   }
 
+  deleteGoal(id) {
+    this.goals = _.omit(this.goals, [JSON.stringify(id)]);
+    return this.getGoals();
+  }
+
   addSupportToGoal({belongsTo, sMsg}) {
     const goalToSupport = this.getGoalById(belongsTo);
     const createdSupportMsg = {id: this.getNextSupportId(), belongsTo, sMsg};
@@ -42,9 +45,17 @@ class Goal {
     return this.getGoalById(belongsTo);
   }
 
-  deleteGoal(id) {
-    this.goals = _.omit(this.goals, [JSON.stringify(id)]);
-    return this.getGoals();
+  deleteSupportFromGoal({belongsTo, id}) {
+    const goalToUpdate = this.getGoalById(belongsTo);
+    const updatedSupportMsgs = goalToUpdate.sMsgs.filter((msg) => {
+      if (msg.id !== id) {
+        return msg;
+      }
+      return;
+    });
+    goalToUpdate.sMsgs = updatedSupportMsgs;
+    this.goals[belongsTo] = goalToUpdate;
+    return { updatedGoals: this.getGoals(), updatedGoal: this.goals[belongsTo] };
   }
 
   getSize() {

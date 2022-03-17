@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { pushToGoals } from './features/goals/allGoalsSlice';
+import { setGoals } from './features/goals/allGoalsSlice';
 import MainTheme from './themes/main';
 import SectionApp from './molecules/atoms/SectionApp';
 import FilterSelect from './molecules/FilterSelect';
@@ -18,7 +18,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchAllGoals(dispatch, pushToGoals);
+    fetchAllGoals(dispatch, setGoals);
   }, []);
 
   return (

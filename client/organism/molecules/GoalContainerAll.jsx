@@ -8,6 +8,8 @@ const GoalContainerAll = (props) => {
   const filterBy = useSelector((state) => state.allGoals.filterBy);
   let mappedGoals;
 
+  console.log('Container All: ', goals);
+
   if (filterBy === '' || filterBy.toLowerCase() === 'all') {
     mappedGoals = goals.map((val, i) => {
       const {id, userName, mWhat, mHow, mTimeFrame, sMsgs} = val;

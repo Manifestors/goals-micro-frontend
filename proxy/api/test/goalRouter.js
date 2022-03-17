@@ -13,7 +13,6 @@ goalRouter.get('/all', (req, res) => {
   return res.status(200).send(goals);
 });
 
-
 goalRouter.post('/one', (req, res) => {
   const goalToCreate = {mWhat, mHow, mTimeFrame} = req.body;
   const createdGoal = goal.addToGoals(goalToCreate);
@@ -28,6 +27,11 @@ goalRouter.post('/one/support', (req, res) => {
 goalRouter.delete('/one/delete', (req, res) => {
   const { goalId } = req.body;
   const updatedGoals = goal.deleteGoal(goalId);
+  return res.status(200).send(updatedGoals);
+});
+
+goalRouter.delete('/one/support/delete', (req, res) => {
+  const updatedGoals = goal.deleteSupportFromGoal(req.body);
   return res.status(200).send(updatedGoals);
 });
 

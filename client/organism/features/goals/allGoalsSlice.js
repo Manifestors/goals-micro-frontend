@@ -20,7 +20,7 @@ const allGoalsSlice = createSlice({
         return currentGoal;
       });
     },
-    deleteAGoalAndUpdateGoals: (state, { payload}) => {
+    setGoals: (state, {payload}) => {
       state.goals = payload;
     },
     setFilter: (state, { payload }) => {
@@ -30,5 +30,5 @@ const allGoalsSlice = createSlice({
 });
 
 
-export const { pushToGoals, updateGoals, setFilter, deleteAGoalAndUpdateGoals } = allGoalsSlice.actions;
+export const { pushToGoals, updateGoals, setFilter, setGoals } = allGoalsSlice.actions;
 export default allGoalsSlice.reducer;
