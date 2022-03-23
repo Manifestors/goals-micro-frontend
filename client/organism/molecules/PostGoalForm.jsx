@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { appendToWhat, appendToHow, setTimeFrame, clearForm } from "../features/forms/postGoalSlice";
 import { pushToGoals } from "../features/goals/allGoalsSlice";
 import { makeViewInvisible } from "../features/views/postGoalView";
-import postAGoal from '../../utils/postAGoal';
+import postAGoal from '../../utils/production/postAGoal';
 
 
 const PostGoalForm = () => {
@@ -52,7 +52,6 @@ const PostGoalForm = () => {
   return (
     <DivInline>
       <Form id='post-goal-form' isPostGoalForm={ true } onSubmit={handleSubmit}>
-
         <Label htmlFor="textarea-what" isPostGoalLabel={ true }>What will you manifest?</Label>
         <TextAreaGoal id='textarea-what' name='textarea-what' rows='3' value={what} onChange={handleWhat}/>
 

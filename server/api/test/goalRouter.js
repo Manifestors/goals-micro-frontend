@@ -16,12 +16,12 @@ goalRouter.get('/all', (req, res) => {
 goalRouter.post('/one', (req, res) => {
   const goalToCreate = {mWhat, mHow, mTimeFrame} = req.body;
   const createdGoal = goal.addToGoals(goalToCreate);
-  return res.status(200).send([createdGoal]);
+  return res.status(201).send([createdGoal]);
 });
 
 goalRouter.post('/one/support', (req, res) => {
   const updatedGoal = goal.addSupportToGoal(req.body);
-  return res.status(200).send([updatedGoal]);
+  return res.status(201).send([updatedGoal]);
 });
 
 goalRouter.delete('/one/delete', (req, res) => {

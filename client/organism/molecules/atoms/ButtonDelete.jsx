@@ -16,7 +16,7 @@ const ButtonDelete = styled.span`
 
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 
-  cursor: grab;
+  cursor: crosshair;
 `;
 
 export default ButtonDelete;

@@ -15,7 +15,7 @@ const GoalContainerEngage = () => {
   const engagedGoal = useSelector((state) => state.engagedGoal.goal);
   const postSupportView = useSelector((state) => state.postSupportView.view);
   const dispatch = useDispatch();
-  const { id, userName, mWhat, mHow, mTimeFrame, sMsgs } = engagedGoal;
+  const { id, username, mWhat, mHow, mTimeFrame, sMsgs } = engagedGoal;
 
   const handleDisengage = (e) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ const GoalContainerEngage = () => {
   return (
     <DivInline>
       <DivContainer id='enganged-goal-container' isGoalContainerEngage={engagedView}>
-        <Goal id={id} userName={userName} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame} sMsgs={sMsgs} />
+        <Goal id={id} username={username} mWhat={mWhat} mHow={mHow} mTimeFrame={mTimeFrame} sMsgs={sMsgs} />
         {
           postSupportView ? <PostSupportForm id='support-post-form'/> :
             <DivInline isGoalContainerEngage={engagedView}>

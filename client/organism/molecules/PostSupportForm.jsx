@@ -8,12 +8,12 @@ import { appendToSupportMessage, clearForm } from "../features/forms/postSupport
 import { makeSupportViewInvisible } from "../features/views/postSupportView";
 import { updateGoals } from "../features/goals/allGoalsSlice";
 import { setEngagedGoal } from "../features/goals/engagedGoalSlice";
-import postASupportMsg from "../../utils/postASupportMsg";
+import postASupportMsg from "../../utils/production/postASupportMsg";
 
 
 const PostSupportForm = () => {
   const sMsg = useSelector((state) => state.postSupportForm.msg);
-  const idOfMsgToSupport = useSelector((state) => state.engagedGoal.id);
+  const idOfManifestationToSupport = useSelector((state) => state.engagedGoal.id);
   const dispatch = useDispatch();
 
   const handleSupportMsg = (e) => {
@@ -24,7 +24,7 @@ const PostSupportForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const sMsg = e.target['textarea-msg'].value;
-    const sMsgObj = {belongsTo: idOfMsgToSupport, sMsg};
+    const sMsgObj = {belongsTo: idOfManifestationToSupport, sMsg};
     postASupportMsg(sMsgObj, dispatch, updateGoals, setEngagedGoal);
     dispatch(clearForm());
     dispatch(makeSupportViewInvisible());

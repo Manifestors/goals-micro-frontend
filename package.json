@@ -4,7 +4,7 @@
   "description": "UI built to interact with the goals-micro-service. Module(s) exposed, i.e. frontend component(s), using Webpack's module federation.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon proxy/index.js",
+    "dev": "nodemon server/index.js",
     "build": "webpack --watch"
   },
   "repository": {
@@ -25,19 +25,24 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
+    "pg": "^8.7.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "regenerator-runtime": "^0.13.9",
+    "sequelize": "^6.17.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "babel-loader": "^8.2.3",
     "babel-plugin-styled-components": "^2.0.2",
+    "dotenv": "^16.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"

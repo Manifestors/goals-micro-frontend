@@ -9,7 +9,7 @@ import GoalContainerAll from './molecules/GoalContainerAll';
 import GoalContainerEngage from './molecules/GoalContainerEngage';
 import PostGoalForm from './molecules/PostGoalForm';
 import PostGoalBtn from './molecules/PostGoalBtn';
-import fetchAllGoals from '../utils/fetchAllGoals';
+import fetchAllGoals from '../utils/production/fetchAllGoals';
 
 
 const App = () => {
