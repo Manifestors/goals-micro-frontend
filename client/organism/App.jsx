@@ -1,7 +1,3 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { setGoals } from './features/goals/allGoalsSlice';
 import MainTheme from './themes/main';
 import SectionApp from './molecules/atoms/SectionApp';
 import FilterSelect from './molecules/FilterSelect';
@@ -10,6 +6,10 @@ import GoalContainerEngage from './molecules/GoalContainerEngage';
 import PostGoalForm from './molecules/PostGoalForm';
 import PostGoalBtn from './molecules/PostGoalBtn';
 import fetchAllGoals from '../utils/production/fetchAllGoals';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setGoals } from './features/goals/allGoalsSlice';
 
 
 const App = () => {

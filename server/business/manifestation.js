@@ -34,6 +34,10 @@ class ManifestationBusiness {
   }
 
   createOne (manifestation, res) {
+    if (manifestation.mTimeFrame === '') {
+      manifestation.mTimeFrame = 'Today';
+    };
+    
     return ManifestationDAO.createOneManifestation(manifestation)
       .then((data) => {
         const createdManifestation = data;
